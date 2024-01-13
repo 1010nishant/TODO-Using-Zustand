@@ -1,4 +1,4 @@
-# Todo Using CONTEXT-API
+# Todo Using Zustand
 
 A simple todo app designed for beginners, created using React and powered by the zustand. This project provides a hands-on introduction to React development, allowing users to manage their daily tasks effortlessly.
 
