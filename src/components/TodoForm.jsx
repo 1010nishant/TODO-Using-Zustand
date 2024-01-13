@@ -1,0 +1,33 @@
+import React from "react";
+import { useTodoStore } from "../store/store";
+
+function TodoForm() {
+  const [todo, setTodo] = React.useState("");
+  const addTodo = useTodoStore((state) => state.addTodo);
+  const add = (e) => {
+    e.preventDefault();
+    if (!todo) return;
+    addTodo({ todo });
+    setTodo("");
+  };
+  return (
+    <form className="flex">
+      <input
+        type="text"
+        placeholder="Write Todo..."
+        className="w-full border border-black/10 rounded-l-lg px-3 outline-none duration-150 bg-white/20 py-1.5"
+        value={todo}
+        onChange={(e) => setTodo(e.target.value)}
+      />
+      <button
+        type="submit"
+        className="rounded-r-lg px-3 py-1 bg-green-600 text-white shrink-0"
+        onClick={add}
+      >
+        Add
+      </button>
+    </form>
+  );
+}
+
+export default TodoForm;
